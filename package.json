@@ -1,0 +1,28 @@
+{
+  "name": "client-hooks-mvn-compile",
+  "version": "0.0.1",
+  "description": "a client-hooks plugin which use maven compile check.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crux-wild/client-hooks-mvn-compile.git"
+  },
+  "keywords": [
+    "client",
+    "hooks",
+    "plugin",
+    "compile",
+    "check",
+    "maven",
+    "java"
+  ],
+  "author": "crux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crux-wild/client-hooks-mvn-compile/issues"
+  },
+  "homepage": "https://github.com/crux-wild/client-hooks-mvn-compile#readme"
+}
