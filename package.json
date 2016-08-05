@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/crux-wild/client-hooks-mvn-compile/issues"
   },
-  "homepage": "https://github.com/crux-wild/client-hooks-mvn-compile#readme"
+  "homepage": "https://github.com/crux-wild/client-hooks-mvn-compile#readme",
+  "dependencies": {
+    "shelljs": "^0.7.3"
+  }
 }
