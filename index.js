@@ -1,8 +1,8 @@
 const spawn = require('child_process').spawn;
 
 class MavenCompilePlugin {
-  constructor({ pluginName = '', cwd = '' }) {
-    this[Symbol.for('pluginName')] = pluginName;
+  constructor({ cwd = '' }) {
+    this[Symbol.for('pluginName')] = 'mvn-compile';
     this[Symbol.for('childProcess')] = spawn('node', './mvn-compile.js');
   }
 
