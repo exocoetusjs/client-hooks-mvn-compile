@@ -13,6 +13,10 @@ try {
     process.stderr.write('please install [mvn] first.\n');
   }
 
+  if (shell.exec(`export FORCE_COLOR='true'`).code !== 0) {
+    process.stderr.write('export FORCE_COLOR >> execution failed.\n');
+  }
+
   if (shell.exec('mvn clean').code !== 0) {
     process.stderr.write('mvn clean >> execution failed.\n');
   }
