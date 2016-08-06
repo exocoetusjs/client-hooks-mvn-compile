@@ -12,7 +12,7 @@ class MavenCompilePlugin {
     const moduleDir = __dirname;
     const scriptLocation = path.join(moduleDir, 'mvn-compile.js');
 
-    this[Symbol.for('process')] = spawn('node', scriptLocation);
+    this[Symbol.for('process')] = spawn('node', [scriptLocation]);
   }
 
   getProcess() {
