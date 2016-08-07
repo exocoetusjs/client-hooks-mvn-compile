@@ -1,6 +1,6 @@
 {
   "name": "client-hooks-mvn-compile",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The client-hooks plugin which use maven compile check.",
   "main": "index.js",
   "scripts": {
