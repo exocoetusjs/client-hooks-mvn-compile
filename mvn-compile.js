@@ -2,25 +2,20 @@
 
 const shell = require('shelljs');
 
-shell.config.fatal = true;
+process.env.FORCE_COLOR = 'true';
 
-try {
-  if (!shell.which('java')) {
-    process.stderr.write('please install [java] first.\n');
-  }
-
-  if (!shell.which('mvn')) {
-    process.stderr.write('please install [mvn] first.\n');
-  }
-
-  if (shell.exec('mvn clean').code !== 0) {
-    process.stderr.write('mvn clean >> execution failed.\n');
-  }
-
-  if (shell.exec('mvn compile').code !== 0) {
-    process.stderr.write('mvn compile >> execution failed.\n');
-  }
+if (!shell.which('java')) {
+  process.stderr.write('please install [java] first.');
 }
-catch (error) {
-  process.stderr.write(`${error}\n`);
+
+if (!shell.which('mvn')) {
+  process.stderr.write('please install [mvn] first.');
+}
+
+if (shell.exec('mvn clean').code !== 0) {
+  process.stderr.write('mvn clean >> execution failed.');
+}
+
+if (shell.exec('mvn compile').code !== 0) {
+  process.stderr.write('mvn compile >> execution failed.');
 }

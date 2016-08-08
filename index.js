@@ -1,21 +1,22 @@
 const spawn = require('child_process').spawn;
 
+const path = require('path');
+
 class MavenCompilePlugin {
   constructor({ cwd = '' } = {}) {
-    this[Symbol.for('pluginName')] = 'mvn-compile';
+    this[Symbol.for('initProcess')]();
   }
 
-  getPluginName() {
-    return this[Symbol.for('pluginName')];
+  [Symbol.for('initProcess')]() {
+    const moduleDir = __dirname;
+
+    const scriptPath = path.join(moduleDir, 'mvn-compile.js');
+
+    this[Symbol.for('process')] = spawn('node', [scriptPath]);
   }
 
   getProcess() {
-    let childProcess = this[Symbol.for('childProcess')];
-
-    if (!childProcess) {
-      this[Symbol.for('childProcess')] = spawn('node', ['./mvn-compile.js']);
-    }
-    return this[Symbol.for('childProcess')];
+    return this[Symbol.for('process')];
   }
 };
 
