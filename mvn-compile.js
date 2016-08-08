@@ -2,6 +2,8 @@
 
 const shell = require('shelljs');
 
+const chalk = require('chalk');
+
 process.env.FORCE_COLOR = 'true';
 
 if (!shell.which('java')) {
