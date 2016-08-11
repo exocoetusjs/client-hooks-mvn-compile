@@ -19,13 +19,13 @@ co(function *() {
     process.stderr.write('please install [mvn] first.');
   }
 
-  let clean = yield utils.mvn('mvn', ['clean']);
+  let clean = yield utils.mvn(['clean']);
 
   if (clean !== 0) {
     process.stderr.write('mvn clean >> execution failed.');
   }
 
-  let compile = yield utils.mvn('mvn', ['compile']);
+  let compile = yield utils.mvn(['compile']);
 
   if (compile !== 0) {
     process.stderr.write('mvn compile >> execution failed.');
