@@ -1,6 +1,6 @@
 {
   "name": "client-hooks-mvn-compile",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "The client-hooks plugin which use maven compile check.",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/crux-wild/client-hooks-mvn-compile#readme",
   "dependencies": {
+    "co": "^4.6.0",
     "shelljs": "^0.7.3"
   }
 }
