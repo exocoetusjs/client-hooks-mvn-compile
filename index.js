@@ -1,4 +1,4 @@
-const spawn = require('child_process').spawn;
+const fork = require('child_process').fork;
 
 const path = require('path');
 
@@ -8,11 +8,9 @@ class MavenCompilePlugin {
   }
 
   [Symbol.for('initProcess')]() {
-    const moduleDir = __dirname;
+    const modulePath = path.join(moduleDir, 'mvn-compile.js');
 
-    const scriptPath = path.join(moduleDir, 'mvn-compile.js');
-
-    this[Symbol.for('process')] = spawn('node', [scriptPath]);
+    this[Symbol.for('process')] = fork(modulePath);
   }
 
   getProcess() {
