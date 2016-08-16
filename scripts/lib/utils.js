@@ -72,8 +72,8 @@ function check_mvn_compile_config_dir() {
 
   const error = chalk.red('ERR!');
 
-  if (!shell.test('-f', config_dir)) {
-    const message = `${error} \`${dir}\` don't exist.`;
+  if (!shell.test('-d', config_dir)) {
+    const message = `${error} \`${dir}\` don't exist.\n\n`;
 
     process.stderr.write(message);
 
