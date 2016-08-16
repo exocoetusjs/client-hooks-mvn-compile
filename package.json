@@ -28,6 +28,8 @@
   "homepage": "https://github.com/crux-wild/client-hooks-mvn-compile#readme",
   "dependencies": {
     "co": "^4.6.0",
+    "download": "^5.0.2",
+    "inquirer": "^1.1.2",
     "shelljs": "^0.7.3"
   }
 }
