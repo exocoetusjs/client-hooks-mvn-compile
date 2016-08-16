@@ -12,7 +12,7 @@ class MavenCompilePlugin {
   }
 
   [Symbol.for('initProcess')]() {
-    const modulePath = path.join(__dirname, 'mvn-compile.js');
+    const modulePath = path.join(__dirname, 'lib', 'mvn-compile.js');
 
     this[Symbol.for('process')] = fork(modulePath, [], { silent: true });
   }
