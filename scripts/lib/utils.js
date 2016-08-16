@@ -29,6 +29,12 @@ function copy(filename = '') {
   return result;
 }
 
+function check(filename = '') {
+  if (filename === 'mvn-compile.js') {
+    check_mvn_compile_config_dir();
+  }
+}
+
 function remove(filename = '') {
   if (filename === 'mvn-compile.js') {
     remove_mvn_compile_config();
@@ -46,26 +52,28 @@ function get_config_dir() {
 
   const config_dir = path.join(pwd, '.clienthooks');
 
-  return configDir;
+  return config_dir;
 }
 
 function get_mvn_compile_config_dir() {
   const config_dir = get_config_dir();
 
-  const filePath = path.join(pwd, config_dir, plugin);
+  const plugin = get_plugin();
+
+  const filePath = path.join(config_dir, plugin);
 
   return filePath;
 }
 
-function check_config_dir(filePath = '') {
+function check_mvn_compile_config_dir() {
   const config_dir = get_config_dir();
 
-  const path = chalk.bgBlack(filePath);
+  const dir = chalk.bgBlack(config_dir);
 
   const error = chalk.red('ERR!');
 
   if (!shell.test('-f', config_dir)) {
-    const message = `${error} \`${path}\` don't exist.`;
+    const message = `${error} \`${dir}\` don't exist.`;
 
     process.stderr.write(message);
 
@@ -149,6 +157,7 @@ function remove_mvn_compile_config() {
 
 module.exports = {
   copy: copy,
+  check: check,
   remove: remove,
   newline: newline,
 };
