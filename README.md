@@ -4,7 +4,7 @@
 
 ## Features
 
-- **Colorize:** Plugin according to `mvn` output information, automatically highlight show.
+- **Colorize:** plugin according to `mvn` output information, automatically highlight show.
 
 ## Getting Started
 
